@@ -1,3 +1,44 @@
+<% if @scout %>
+
+    <h1> Check Out <%= link_to @scout.first_name, scout_path(@scout) %> Camping Trips! </h1>
+
+    <ul>
+
+        <% @trips.each do |trip| %>
+
+            <li><%= trip.location%></li>
+            DATE : <%= trip.date %>
+            <br><br>
+
+        <% end %>
+
+    </ul>
+
+
+<% else %>
+
+
+    <h1> See the Troop's Camping Data Below: </h1>
+
+
+        <% @trips.each do |trip| %>
+            <li><%= trip.location%></li>
+            DATE : <%= trip.date %>
+        <% end %>
+
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
 <h1> Check out the troop's overall Camping History</h1>
 
 
