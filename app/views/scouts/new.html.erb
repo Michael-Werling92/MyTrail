@@ -1,0 +1,17 @@
+<h1>Sign Up for the Scout Tracking Website Below</h1>
+
+<%= form_with model: @scout do |f| %>
+
+    <%= f.label :first_name%>
+    <%= f.text_field :first_name%><br>
+    <%= f.label :last_name%>
+    <%= f.text_field :last_name%><br>
+    <%= f.label :rank%>
+    <%= f.text_field :rank%><br>
+    <%= f.label :username%>
+    <%= f.text_field :username%><br>
+    <%= f.label :password%>
+    <%= f.password_field :password%><br>
+
+<%= f.submit "Signup" %>
+<% end %>

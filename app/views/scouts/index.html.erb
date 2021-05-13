@@ -1,1 +1,10 @@
-<h1>Test</h1>
+<h1>This is a list of all registered Scouts in our Troop</h1>
+
+<ul>
+    <% @scouts.each do |scout|%>
+
+        <%= link_to scout.first_name, scout_path(scout) %>
+
+    <% end %>
+</ul>
+
