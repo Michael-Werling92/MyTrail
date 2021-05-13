@@ -15,8 +15,8 @@ class ScoutsController < ApplicationController
     def create
         @scout = Scout.new(scout_params)
         if @scout.save
-            binding.pry
             session[:scout_id] = @scout.id
+            binding.pry
             redirect_to scout_path(@scout)
         else
             render :new

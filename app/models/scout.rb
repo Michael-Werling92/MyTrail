@@ -1,8 +1,6 @@
 class Scout < ApplicationRecord
     has_secure_password
 
-    has_many :badges
-
     has_many :trips
 
     has_many :scout_badges

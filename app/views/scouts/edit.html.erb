@@ -1,0 +1,11 @@
+
+
+<%= form_with model: @user do |f| %>
+    
+    Name: <%= f.first_name f.last_name %>
+    Rank: <f.text_field :rank, placeholder: @scout.rank %>
+    Username: <%= f.username%>
+    
+    <%= f.submit "Click here to get promoted in the system"%>
+    
+<% end %>
