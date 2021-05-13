@@ -1,8 +1,11 @@
 class ScoutsController < ApplicationController
+    
+    before_action :find_scout, only: [:show, :edit, :update, :destroy]
+    
     def index
         @scouts = Scout.all
     end
-    def show 
+    def show
     end
 
     def new
@@ -12,7 +15,7 @@ class ScoutsController < ApplicationController
         @scout = Scout.new(scout_params)
         if @scout.save
             binding.pry
-            session[scout_id] = @scout.id
+            session[:scout_id] = @scout.id
             redirect_to scout_path(@scout)
         else
             render :new
