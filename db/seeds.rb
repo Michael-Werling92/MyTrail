@@ -15,3 +15,12 @@
     password: "12345",
     )
 end
+
+20.times do
+    Trip.create(location: Faker::Mountain.name,
+    date: Time.now,
+    scout_id: rand(1..100),
+    )
+end
+
+puts "seeds planted"

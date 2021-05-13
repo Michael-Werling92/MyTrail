@@ -5,7 +5,7 @@ class TripsController < ApplicationController
            find_scout
            @trips = @scout.trips
          else
-           @trips = Scouts.all
+           @trips = Trip.all
         end
     end
     def show
