@@ -12,6 +12,6 @@
     last_name: Faker::Name.last_name,
     rank: Faker::Mountain.name,
     username: Faker::Artist.name,
-    password_digest: "12345",
+    password: "12345",
     )
 end
