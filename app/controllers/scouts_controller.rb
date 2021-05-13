@@ -22,6 +22,13 @@ class ScoutsController < ApplicationController
         end
     end
 
+    def edit
+    end
+    def update
+        @scout.update(scout_params)
+        redirect_to scout_path(@scout)
+    end
+
 
     private
 

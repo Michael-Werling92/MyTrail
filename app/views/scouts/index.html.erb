@@ -3,7 +3,7 @@
 <ul>
     <% @scouts.each do |scout|%>
 
-        <%= link_to scout.first_name, scout_path(scout) %>
+        <%= link_to scout.username, scout_path(scout) %>
 
     <% end %>
 </ul>
