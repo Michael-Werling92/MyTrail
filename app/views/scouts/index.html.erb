@@ -1,29 +1,15 @@
-<% if @scout %>
-
-    <h1> Please see below for a list of your camping trips.</h1>
-
-    <ul>
-
-        <% @trips.each do |trip| %>
-
-            <li><%= link_to trip.location, scout_trip_path(@scout, trip) %></li>
-            <br><br>
-
-        <% end %>
-
-    </ul>
+<h1>Find all of the scouts in the troop below:</h1>
 
 
-<% else %>
+<ul>
 
+    <% @scouts.each do |scout| %>
 
-    <h1> Troop's camping record: </h1>
+        <%= scout.first_name %> <%= scout.last_name %> (<%= scout.rank%>) <br> AKA:
+        <%= link_to scout.username, scout_path(scout) %>
 
+        <br><br>
 
-        <% @trips.each do |trip| %>
-            <li><%= link_to trip.location, trip_path(trip) %></li>
-            Date : <%= trip.date %>
-        <% end %>
+    <% end %>
 
-
-<% end %>
+</ul>
