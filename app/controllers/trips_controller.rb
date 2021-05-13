@@ -1,5 +1,7 @@
 class TripsController < ApplicationController
 
+    before_action :find_trip, only: [:show, :edit, :update, :destroy]
+
     def index
         if params[:scout_id]
            find_scout
@@ -26,6 +28,7 @@ class TripsController < ApplicationController
         if params[:scout_id]
             find_scout
             @trip = @scout.trips.build(trip_with_scout_params)
+            binding.pry
         else
             @trip = Trip.new(trip_params)
         end
@@ -38,7 +41,16 @@ class TripsController < ApplicationController
             else
             render :new
             end
-    end 
+    end
+
+    def edit
+    end
+    def update
+    end
+  
+  
+    def destroy
+    end
 
 
 

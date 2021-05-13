@@ -10,6 +10,7 @@ class ScoutsController < ApplicationController
 
     def new
         @scout = Scout.new
+        3.times { @scout.trips.build }
     end
     def create
         @scout = Scout.new(scout_params)

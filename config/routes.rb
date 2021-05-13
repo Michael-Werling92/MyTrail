@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :scout_badges
+  resources :badges
   resources :trips
   resources :scouts
 
