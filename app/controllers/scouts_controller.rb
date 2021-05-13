@@ -2,8 +2,7 @@ class ScoutsController < ApplicationController
     def index
         @scouts = Scout.all
     end
-    def show
-        @scout = 
+    def show 
     end
 
     def new
