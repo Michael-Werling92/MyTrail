@@ -40,7 +40,7 @@ class TripsController < ApplicationController
             end
     end 
 
-end
+
 
 private 
 
@@ -48,14 +48,16 @@ private
   def find_trip
       @trip = Trip.find_by_id(params[:id])
   end
-     def trip_params
+    def trip_params
          params.require(:trip).permit(:location, :date)
-     end 
+    end 
 
 
   def find_scout
       @scout = Scout.find_by_id(params[:scout_id])
   end
-     def trip_with_scout_params
+    def trip_with_scout_params
          params.require(:trip).permit(:location, :date, :scout_id)
-     end 
+    end
+
+end
