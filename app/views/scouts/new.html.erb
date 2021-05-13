@@ -1,5 +1,17 @@
 <h1>Sign Up for the Scout Tracking Website Below</h1>
 
+<br>
+    <% if @scout.errors.any? %>
+
+        <% @scout.errors.full_messages.each do |error| %>
+
+            <h4><%= error %></h4>
+        
+        <% end %>
+
+    <% end %>
+<br>
+
 <%= form_with model: @scout do |f| %>
 
     <%= f.label :first_name%>

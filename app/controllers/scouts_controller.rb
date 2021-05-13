@@ -10,9 +10,9 @@ class ScoutsController < ApplicationController
     end
     def create
         @scout = Scout.new(scout_params)
-        binding.pry
         if @scout.save
-            session[scout_id] = @scout_id
+            binding.pry
+            session[scout_id] = @scout.id
             redirect_to scout_path(@scout)
         else
             render :new
