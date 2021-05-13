@@ -37,7 +37,8 @@ class ScoutsController < ApplicationController
         @scout = Scout.find_by_id(params[:id])
     end
     def scout_params
-        params.require(:scout).permit(:first_name, :last_name, :rank, :username, :password)
+        params.require(:scout).permit(:first_name, :last_name, :rank, :username, :password,
+            trips_attributes: [:location, :date])
     end
 
 

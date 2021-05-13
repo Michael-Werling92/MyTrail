@@ -25,6 +25,14 @@
     <%= f.label :password%>
     <%= f.password_field :password%><br>
 
+<h2> Please enter any camping you may have been on: </h2>
+    <%= f.fields_for :trips do |ff| %>
+        <br>
 
+        Location: <%= ff.text_field :location %>
+        <br>
+        Date: <%= ff.date_field :date %>
+        <br>    
+    <% end %><br>
 <%= f.submit "Signup" %>
 <% end %>
