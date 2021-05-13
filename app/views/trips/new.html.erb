@@ -1,0 +1,17 @@
+<h2> Enter Information on your camping trip below: </h2>
+
+
+    <%= form_with model: [@scout, @trip] do |f| %>
+        <br>
+    
+        Location of trip: <%= f.text_field :location %>
+        <br>
+        Date of Trip: <%= f.date_field :date %>
+        <%= f.submit %>
+    
+    <% end %><br>
+    
+    
+    
+    
+    <br><br><br><br>

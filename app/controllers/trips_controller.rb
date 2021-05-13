@@ -22,21 +22,5 @@ class TripsController < ApplicationController
            @trip = Trip.new 
         end
     end
-    def create
-        if params[:scout_id]
-            find_scout
-            @trip = @scout.trips.build(trip_with_user_params)
-        else
-            @trip = Trip.new(trip_params)
-        end
-        if @trip.save
-           if @scout
-                    redirect_to scout_trip_path(@scout, @trip)
-                else
-                    redirect_to @trip 
-                end
-        else
-            render :new
-        end
 
 end
