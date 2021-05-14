@@ -15,13 +15,12 @@ ActiveRecord::Schema.define(version: 2021_05_13_175945) do
   create_table "badges", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.boolean "Eagle_Required"
+    t.boolean "eagle_Required"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "scout_badges", force: :cascade do |t|
-    t.string "name"
     t.datetime "date"
     t.boolean "fun"
     t.integer "scout_id", null: false

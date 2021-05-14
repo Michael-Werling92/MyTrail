@@ -8,8 +8,8 @@
 
 ScoutBadge.destroy_all
 
+    Badge.destroy_all
     Scout.destroy_all
-    User.destroy_all
 
 
 
@@ -44,16 +44,15 @@ list_of_badges = [
     list_of_badges.each do |badge|
 
         Badge.create(name: badge,
-        description: Faker::Quote.famous_last_words
-        Eagle_Required: true)
+        description: Faker::Quote.famous_last_words,
+        eagle_Required: true)
     end
 
 20.times do 
-    ScoutBadge.create(name: null,
-        date: Time.rand,
-        fun: [true,false].sample
+    ScoutBadge.create(date: Time.now,
+        fun: [true,false].sample,
         scout: Scout.all.sample,
-        badge: Badge.all.sample
+        badge: Badge.all.sample)
 end 
 
 20.times do
