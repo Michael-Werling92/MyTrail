@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'auth/:provider/callback' to: 'sessions#omniauth'
+
   resources :scouts do
     resources :trips
     resources :scout_badges
