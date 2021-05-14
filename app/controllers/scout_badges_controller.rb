@@ -1,6 +1,21 @@
 class ScoutBadgesController < ApplicationController
+    
+    def index
+        @scout_badges = ScoutBadge.all
+    end
+    
     def new
         @scout_badge = ScoutBadge.new
+        @scout = current_scout
+    end
+    def create
+        @scout_badge = ScoutBadge.new(scout_badge_params)
+        if @scout_badge.save
+            binding.pry
+            redirect_to user_hobby_path(@user_hobby)
+        else
+            render :new
+        end
     end
     
 
@@ -19,7 +34,7 @@ class ScoutBadgesController < ApplicationController
         @scout_badge = ScoutBadge.find_by_id(params[:id])
     end
     def scout_badge_params
-        params.require(:scout_badge).permit(:fun, :date, :user_id, :hobby_id)
+        params.require(:scout_badge).permit(:fun, :date, :scout_id, :badge_id)
     end 
 
 end

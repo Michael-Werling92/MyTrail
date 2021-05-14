@@ -1,0 +1,10 @@
+
+
+
+    <h2> See the Troop's Merit Badge Data Below: </h2>
+
+
+        <% @scout_badges.each do |badge| %>
+            <li><%= badge.badge.name%></li>
+            Scout : <%= badge.scout.first_name %>
+        <% end %>
