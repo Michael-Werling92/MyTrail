@@ -6,6 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+ScoutBadge.destroy_all
+
+    Scout.destroy_all
+    User.destroy_all
+
+
+
+
 20.times do
 
     Scout.create(first_name: Faker::Name.first_name,
@@ -15,6 +23,38 @@
     password: "12345",
     )
 end
+
+list_of_badges = [
+    "Camping",
+    "Swimming",
+    "First Aid",
+    "Emergency Preparadness",
+    "Cooking",
+    "Citizenship in the Community",
+    "Citizenship in the Nation",
+    "Citizenship in the World",
+    "Personal Fitness",
+    "Environmental Science",
+    "Family Life",
+    "Communications"
+]
+    how_many_badges = list_of_badges.length
+
+
+    list_of_badges.each do |badge|
+
+        Badge.create(name: badge,
+        description: Faker::Quote.famous_last_words
+        Eagle_Required: true)
+    end
+
+20.times do 
+    ScoutBadge.create(name: null,
+        date: Time.rand,
+        fun: [true,false].sample
+        scout: Scout.all.sample,
+        badge: Badge.all.sample
+end 
 
 20.times do
     Trip.create(location: Faker::Mountain.name,
