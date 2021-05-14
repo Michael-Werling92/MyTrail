@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
-  resources :scout_badges
-  resources :badges
-  resources :trips
+
   resources :scouts do
     resources :trips
     resources :scout_badges
   end
+
+  resources :scout_badges
+  resources :badges
+  resources :trips
+
 
   get 'login', to: "sessions#new"
 
