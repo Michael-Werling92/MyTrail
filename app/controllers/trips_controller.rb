@@ -23,7 +23,8 @@ class TripsController < ApplicationController
            find_scout
            @trip = @scout.trips.build
         else
-           @trip = Trip.new 
+           @trip = Trip.new
+           @current_scout= Scout.find_by_id(session[:scout_id])
         end
     end
     def create

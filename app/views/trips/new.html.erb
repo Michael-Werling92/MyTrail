@@ -1,5 +1,5 @@
-<%=if @scout%>
 
+<%if@scout%>
 <h2> Enter Information on your camping trip below: </h2>
 
 
@@ -10,14 +10,10 @@
         <br>
         Date of Trip: <%= f.date_field :date %>
         <%= f.submit %>
-    
-    <% end %><br>
-    
-    <h2><%= link_to "Click Here to view all of the Troop's Camping Record", trips_path %></h2><br>
-    <h2><%= link_to "Click Here to view your total camping record", scout_trips_path(@current_scout) %></h2><br>
+
+    <%end%>
 
 <%else%>
-
 <h2> Enter Information on your camping trip below: </h2>
 
 
@@ -28,11 +24,6 @@
         <br>
         Date of Trip: <%= f.date_field :date %>
         <%= f.submit %>
-    
-    <% end %><br>
-    
-    <h2><%= link_to "Click Here to view all of the Troop's Camping Record", trips_path %></h2><br>
-    <h2><%= link_to "Click Here to view your total camping record", scout_trips_path(@current_scout) %></h2><br>
 
-    
+    <%end%>
 <%end%>
