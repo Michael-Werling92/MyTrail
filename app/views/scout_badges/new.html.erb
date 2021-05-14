@@ -1,1 +1,20 @@
-<h1>test</h1>
+<h1> What Merit Badge Do You Enter? </h1>
+
+
+
+<%= form_with model: @scout_badge do |f| %>
+
+        Select the Merit Badge That you would like to Add: <%= f.collection_select :badge_id, Badge.all, :id, :name %>
+        Did you have fun doing this badge? <%= f.radio_button :fun, true %> Y 
+        <%= f.radio_button :heat, false %> N
+        Date of Earning: <%= f.date_field :date %>
+        <%= f.submit %>
+    
+    
+        <br><br>
+
+            <%= f.submit "Submt Record" %>
+
+        <br><br>
+
+<% end %>
