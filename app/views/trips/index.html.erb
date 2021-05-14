@@ -1,6 +1,3 @@
-<%= link_to "Click Here to add a new camping record", new_trip_path %><br>
-
-
 <% if @scout %>
 
     <h1> Check Out <%= link_to @scout.first_name, scout_path(@scout) %>'s Camping Trips! </h1>
@@ -17,8 +14,8 @@
 
     </ul>
 
-    <h2><%= link_to "Click Here to add a new camping record", new_scout_trip_path %></h2><br>
-    <h2><%= link_to "Click Here to view all of the Troop's Camping Record", trips_path %></h2><br>
+    <h2><%= link_to "Click Here to add a new camping record", new_scout_trip_path(@scout) %></h2><br>
+    <h2><%= link_to "Click Here to view the troop's camping record", trips_path %></h2><br>
     
 
 <% else %>
@@ -32,6 +29,6 @@
             DATE : <%= trip.date %>
         <% end %>
     
-
+        <h2><%= link_to "Click Here to add a new camping record", new_scout_trip_path(@current_scout.id) %></h2><br>
 
 <% end %>

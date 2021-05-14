@@ -6,11 +6,13 @@ class TripsController < ApplicationController
         if params[:scout_id]
            find_scout
            @trips = @scout.trips
-         else
+        else
            @trips = Trip.all
+           @current_scout= Scout.find_by_id(session[:scout_id])
         end
     end
     def show
+        @current_scout = current_scout
         if params[:scout_id] 
             find_scout
         end

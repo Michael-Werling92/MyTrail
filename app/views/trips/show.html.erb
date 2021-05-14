@@ -1,13 +1,9 @@
-
-
-
 <h1>Your Camping Trip on <%= @trip.date %></h1>
 
 
 <h1> Location of Trip: <%= @trip.location%></h1>
 
 
-<h2><%= link_to "Click Here to add a new camping record", new_scout_trip_path %></h2><br>
-<h2><%= link_to "Click Here to view your total camping record", scout_trips_path %></h2><br>
+<h2><%= link_to "Click Here to add a new camping record", new_scout_trip_path(@current_scout) %></h2><br>
+<h2><%= link_to "Click Here to view your total camping record", scout_trips_path(@current_scout) %></h2><br>
 <h2><%= link_to "Click Here to view all of the Troop's Camping Record", trips_path %></h2><br>
-
