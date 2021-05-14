@@ -1,0 +1,11 @@
+<h1> Here is a list of all merit badges that can be earned: </h1>
+
+
+        <% @badges.each do |badges| %>
+            <li><%= link_to badge.name, badge_path(badge) %></li>
+        <% end %>
+
+        Click each one to learn more.
+
+
+<% end %>
