@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
     end
 
     def login
+        redirect to scout_path
     end
     def destroy
         session.clear
