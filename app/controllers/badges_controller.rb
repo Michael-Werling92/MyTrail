@@ -3,7 +3,7 @@ class BadgesController < ApplicationController
         @badges = Badge.all
     end
     def show
-        @badge = badge.find_by_id(params[:id])
+        @badge = Badge.find_by_id(params[:id])
     end 
 
 end
