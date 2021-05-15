@@ -1,8 +1,10 @@
 <% if logged_in? %>
 
     <h2> Hello, <%= link_to current_scout.first_name, scout_path(current_scout) %>!</h2>
-    <li><%= link_to "Log Out", logout_path,  method: :delete %></li>
-    <li><%= link_to "Merit Badge Home", scout_badges_path%></li>
+    <%= link_to "Log Out", logout_path,  method: :delete %><br>
+    <%= link_to "Troop Roster", scouts_path%><br>
+    <%= link_to "Merit Badge Home", scout_badges_path%><br>
+    <%= link_to "Camping Home", trips_path%><br>
 
     <% else %>
 

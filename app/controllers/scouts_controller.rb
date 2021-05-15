@@ -4,17 +4,11 @@ class ScoutsController < ApplicationController
     
     def index
         @scouts = Scout.all
-        if logged_in?
-        else
-            redirect_to "/"
-        end
     end
     def show
-        if logged_in?
+        binding.pry
+        if params[:id] 
             @scout = Scout.find_by_id(params[:id])
-            @current_scout = Scout.find_by_id(session[:scout_id])
-        else
-            redirect_to "/"
         end
     end
 
@@ -25,7 +19,6 @@ class ScoutsController < ApplicationController
         @scout = Scout.new(scout_params)
         if @scout.save
             session[:scout_id] = @scout.id
-            binding.pry
             redirect_to scout_path(@scout)
         else
             render :new
@@ -33,7 +26,11 @@ class ScoutsController < ApplicationController
     end
 
     def edit
-        @current_scout = current_scout
+        if logged_in? && params[:scout_id]=current_scout.id
+            find_scout
+        else
+            redirect_to "/"
+        end
     end
     def update
         @scout.update(scout_params)

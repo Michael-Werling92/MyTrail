@@ -1,1 +1,13 @@
-<h1>Test</h1>
+<h1>Edit your Rank below</h1>
+
+<!--No need for errors as the only editable field is not required-->
+
+<%= form_with model: @scout do |f| %>
+    
+    Name: <%=@scout.first_name %> <%=@scout.last_name%>
+    Username: <%=@scout.username %>
+    Rank: <%= f.text_field :rank, placeholder: @scout.rank %>
+    
+    <%= f.submit "Click Here to promote your rank." %>
+    
+<% end %>

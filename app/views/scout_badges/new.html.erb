@@ -1,4 +1,4 @@
-<h1> What Merit Badge Do You Enter? </h1>
+<h1> Add Merit Badge </h1>
 
 <% if @scout_badge.errors.any? %>
 
@@ -12,11 +12,11 @@
 
 <%= form_with model: @scout_badge do |f| %>
 
-        Select the Scout you would like to update: <%= f.collection_select :scout_id, Scout.all, :id, :username %>
-        Select the Merit Badge that you would like to add: <%= f.collection_select :badge_id, Badge.all, :id, :name %>
+        Select the Username for the Scout you would like to update: <%= f.collection_select :scout_id, Scout.all, :id, :username %><br>
+        Select the Merit Badge that you would like to add: <%= f.collection_select :badge_id, Badge.all, :id, :name %><br>
         Did you have fun doing this badge? <%= f.radio_button :fun, true %> Y 
-        <%= f.radio_button :heat, false %> N
-        Date of Earning: <%= f.date_field :date %>
+        <%= f.radio_button :fun, false %> N <br>
+        Date that the badge was earned: <%= f.date_field :date %>
     
     
         <br><br>
