@@ -12,7 +12,7 @@ class ScoutBadgesController < ApplicationController
         @scout_badge = ScoutBadge.new(scout_badge_params)
         if @scout_badge.save
             binding.pry
-            redirect_to user_hobby_path(@user_hobby)
+            redirect_to scout_badge_path(@scout_badge)
         else
             render :new
         end
