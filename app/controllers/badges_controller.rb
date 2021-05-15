@@ -3,7 +3,14 @@ class BadgesController < ApplicationController
         @badges = Badge.all.order(:name)
     end
     def show
-        @badge = Badge.find_by_id(params[:id])
+        binding.pry
+        @badge = Badge.find_by_name(params[:id])
     end 
+
+private
+def badge_params
+    params.require(:badge).permit(:name, :description, :eagle_Required)
+end 
+
 
 end
