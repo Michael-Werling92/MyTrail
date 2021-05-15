@@ -1,6 +1,14 @@
 <h1> What Merit Badge Do You Enter? </h1>
 
+<% if @scout_badge.errors.any? %>
 
+        <% @scout_badge.errors.full_messages.each do |error| %>
+
+            <h4><%= error %></h4>
+        
+        <% end %>
+
+    <% end %>
 
 <%= form_with model: @scout_badge do |f| %>
 

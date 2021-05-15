@@ -30,7 +30,7 @@ class SessionsController < ApplicationController
             session[:scout_id]= scout.id
             redirect_to scout_path(scout)
         else
-
+            flash[:message]= scout.errors.full_messages.join(", ")
             redirect_to '/login'
         end
     end
