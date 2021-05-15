@@ -2,8 +2,7 @@ class ScoutBadgesController < ApplicationController
     
     def index
         @scout_badges = ScoutBadge.all
-        if logged_in?
-            render :index
+        if logged_in
         else
             redirect_to "/"
         end
@@ -13,7 +12,6 @@ class ScoutBadgesController < ApplicationController
         @scout_badge = ScoutBadge.new
         @scout = current_scout
         if logged_in?
-            render :new
         else
             redirect_to "/"
         end
@@ -28,15 +26,6 @@ class ScoutBadgesController < ApplicationController
         end
     end
     
-
-
-
-
-
-
-
-
-
     private 
 
 

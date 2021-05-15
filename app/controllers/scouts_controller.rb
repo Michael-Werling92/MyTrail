@@ -4,13 +4,20 @@ class ScoutsController < ApplicationController
     
     def index
         @scouts = Scout.all
+        if logged_in?
+        else
+            redirect_to "/"
+        end
     end
     def show
+        if logged_in?
+        else
+            redirect_to "/"
+        end
     end
 
     def new
         @scout = Scout.new
-        3.times { @scout.trips.build }
     end
     def create
         @scout = Scout.new(scout_params)

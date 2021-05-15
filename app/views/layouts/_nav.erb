@@ -1,6 +1,6 @@
 <% if logged_in? %>
 
-    <h2> Hello, <%= current_scout.first_name %>!</h2>
+    <h2> Hello, <%= link_to current_scout.first_name, scout_path(current_scout) %>!</h2>
     <li><%= link_to "Log Out", logout_path,  method: :delete %></li>
 
     <% else %>
