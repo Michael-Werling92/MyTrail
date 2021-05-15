@@ -1,7 +1,7 @@
 class ScoutBadgesController < ApplicationController
     
     def index
-        @scout_badges = ScoutBadge.all
+        @scout_badges = ScoutBadge.all.order(date: :desc)
         if logged_in?
         else
             redirect_to "/"

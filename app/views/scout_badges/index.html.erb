@@ -1,10 +1,14 @@
 
 
 
-    <h2> See the Troop's Merit Badge Data Below: </h2>
+    <h2> See the Troop's Most Recent Merit Badge Earnings: </h2>
 
+    <h2><%= link_to "Add a new Merit Badge to the advancement report", new_scout_badge_path %></h2>
 
         <% @scout_badges.each do |badge| %>
-            <li><%= badge.badge.name%></li>
-            Scout : <%= badge.scout.first_name %>
+            <li><b><%= badge.badge.name%></b></li>
+            Earned By : <%= badge.scout.first_name %> <%= badge.scout.last_name %><br>
+            Date Earned : <%=badge.date.strftime("%A, %b %e, %Y")%> 
         <% end %>
+
+    <h2><%= link_to "Add a new Merit Badge to the advancement report", new_scout_badge_path %></h2>
