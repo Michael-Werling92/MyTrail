@@ -2,7 +2,7 @@ class ScoutBadgesController < ApplicationController
     
     def index
         @scout_badges = ScoutBadge.all
-        if logged_in
+        if logged_in?
         else
             redirect_to "/"
         end
