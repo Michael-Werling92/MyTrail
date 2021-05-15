@@ -1,6 +1,6 @@
 class ScoutsController < ApplicationController
     
-    before_action :find_scout, only: [:show, :edit, :update, :destroy]
+    before_action :find_scout, only: [:edit, :update, :destroy]
     
     def index
         @scouts = Scout.all
@@ -11,6 +11,8 @@ class ScoutsController < ApplicationController
     end
     def show
         if logged_in?
+            @scout = Scout.find_by_id(params[:id])
+            @current_scout = Scout.find_by_id(session[:scout_id])
         else
             redirect_to "/"
         end
@@ -31,12 +33,17 @@ class ScoutsController < ApplicationController
     end
 
     def edit
+        @current_scout = current_scout
     end
     def update
         @scout.update(scout_params)
         redirect_to scout_path(@scout)
     end
 
+    def destroy
+        @scout.destroy
+        redirect_to "/"
+    end
 
     private
 

@@ -10,3 +10,7 @@
 <%= link_to "See all available badges here", badges_path %>
 <br><br>
 <h2><%= link_to "Click Here to add a new camping record for this scout", new_scout_trip_path(@scout.id) %></h2><br>
+<% if @scout.id == @current_scout.id %>
+    <h2><%= link_to "Click here to update your Rank", edit_scout_path(@current_scout.id) %></h2><br>
+    <h2><%= link_to "Click here to leave the troop and delete your account with MyTrail", @current_scout, method: :delete %> Warning: This cannot be undone.
+<%end%>
