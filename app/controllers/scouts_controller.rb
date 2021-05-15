@@ -6,9 +6,12 @@ class ScoutsController < ApplicationController
         @scouts = Scout.all
     end
     def show
-        binding.pry
-        if params[:id] 
-            @scout = Scout.find_by_id(params[:id])
+        if logged_in?
+            if params[:id] 
+            find_scout
+            end
+        else
+            redirect_to "/"
         end
     end
 

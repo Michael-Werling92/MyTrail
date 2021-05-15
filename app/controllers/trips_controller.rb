@@ -12,10 +12,6 @@ class TripsController < ApplicationController
         end
     end
     def show
-        @current_scout = current_scout
-        if params[:scout_id] 
-            find_scout
-        end
     end
 
     def new

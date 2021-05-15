@@ -1,5 +1,15 @@
 
 <%if@scout%>
+<br>
+<% if @trip.errors.any? %>
+
+<% @trip.errors.full_messages.each do |error| %>
+
+    <h4><%= error %></h4>
+    <%end%>
+
+<% end %>
+<br>
 <h2> Enter Information on your camping trip below: </h2>
 
 
@@ -14,6 +24,15 @@
     <%end%>
 
 <%else%>
+<br>
+<% if @trip.errors.any? %>
+
+<% @trip.errors.full_messages.each do |error| %>
+
+    <h4><%= error %></h4>
+    <%end%>
+<% end %>
+<br>
 <h2> Enter Information on your camping trip below: </h2>
 
 
