@@ -3,8 +3,7 @@ class BadgesController < ApplicationController
         @badges = Badge.all.order(:name)
     end
     def show
-        binding.pry
-        @badge = Badge.find_by_name(params[:id])
+        @badge = Badge.find_by_id(params[:id])
     end 
 
 private

@@ -14,14 +14,12 @@
 
         Select the Username for the Scout you would like to update: <%= f.collection_select :scout_id, Scout.all, :id, :username %><br>
         Select the Merit Badge that you would like to add: <%= f.collection_select :badge_id, Badge.all, :id, :name %><br>
-        Did you have fun doing this badge? <%= f.radio_button :fun, true %> Y 
-        <%= f.radio_button :fun, false %> N <br>
         Date that the badge was earned: <%= f.date_field :date %>
     
     
         <br><br>
 
-            <%= f.submit "Submt Record" %>
+            <%= f.submit "Submit Record" %>
 
         <br><br>
 
