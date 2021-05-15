@@ -6,5 +6,7 @@
     <h2>Rank:</h2> <%= @scout.rank %>
     <h2>MyTrail Username:</h2> <%= @scout.username%>
 
-<br><h2><%= link_to "Add a new Merit Badge to the advancement report", new_scout_badge_path %></h2><br>
-<br><h2><%= link_to "See all available badges here", badges_path %></h2><br>
+<h2><%= link_to "Add a new Merit Badge to the advancement report", new_scout_badge_path %></h2>
+<%= link_to "See all available badges here", badges_path %>
+<br><br>
+<h2><%= link_to "Click Here to add a new camping record for this scout", new_scout_trip_path(@scout.id) %></h2><br>

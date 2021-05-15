@@ -4,7 +4,7 @@
 
     <ul>
 
-        <% @trips.order(:date) do |trip| %>
+        <% @trips.each do |trip| %>
 
             <li><%= link_to trip.location, scout_trip_path(@scout, trip)%></li>
             DATE : <%= trip.date %>
