@@ -6,9 +6,8 @@
 
         <% @scout_badges.each do |badge| %>
 
-            <li><%= link_to badge.badge.name, badge_path(badge.badge.name)%></li>
+            <li><%= link_to badge.badge.name, badge_path(badge.badge.id)%></li>
             DATE Earned : <%= badge.date %>
-            Was it Fun? : <%= badge.fun %>
             <br><br>
 
         <% end %>
@@ -25,7 +24,7 @@
     <h2><%= link_to "Add a new Merit Badge to the advancement report", new_scout_badge_path %></h2>
 
         <% @scout_badges.each do |badge| %>
-            <li><b><%= link_to badge.badge.name, badge_path(badge.badge.name)%><b></li>
+            <li><b><%= link_to badge.badge.name, badge_path(badge.badge.id)%><b></li>
             Earned By : <%= link_to badge.scout.username, scout_path(badge.scout) %><br>
             Date Earned : <%=badge.date.strftime("%A, %b %e, %Y")%> 
         <% end %>

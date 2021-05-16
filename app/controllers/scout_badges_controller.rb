@@ -3,9 +3,9 @@ class ScoutBadgesController < ApplicationController
     def index
             if params[:scout_id]
                 @scout = Scout.find_by_id(params[:scout_id])
-                @scout_badges = @scout.scout_badges.order(:date)
+                @scout_badges = @scout.scout_badges.order(date: :desc)
             else
-                @scout_badges = ScoutBadge.all.order(:date)
+                @scout_badges = ScoutBadge.all.order(date: :desc)
             end
     end
 

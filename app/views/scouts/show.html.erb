@@ -5,3 +5,16 @@
     <h2>Last Name:</h2> <%= @scout.last_name %>
     <h2>Rank:</h2> <%= @scout.rank %>
     <h2>MyTrail Username:</h2> <%= @scout.username%>
+
+    <h2><%= link_to "View this scout's camping record.", scout_trips_path(@scout) %></h2>
+        <h3><%= link_to "Add a camping record for this scout", new_scout_trip_path(@scout) %></h3><br>
+
+    <h2><%= link_to "View this scout's Merit Badge record.", scout_scout_badges_path(@scout) %></h2>
+        <h3><%= link_to "Add a new Merit Badge to the advancement report", new_scout_badge_path %></h3><br>
+    
+    <%if @scout == current_scout %>
+    <h2><%= link_to "Update your rank in the advancement systemn.", edit_scout_path(current_scout) %></h2>
+        <h3><%= link_to "LEAVE THE TROOP AND DELETE THIS SCOUT ACCOUNT", current_scout, method: :delete %><br>
+        WARNING: This cannot be undone.
+    <%end%>
+
