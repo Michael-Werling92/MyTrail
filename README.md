@@ -1,24 +1,18 @@
 # README
+MyTrail Scout Tracking System
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+You can use this application to track your camping trips and see all of the camping activity across the troop.
+You can also update the Merit badge records for you or any Scout in the troop and see all of the recent Merit badges earned across the Troop.
 
-Things you may want to cover:
+Installation
+Clone this repo
+Run bundle install
+Run rails db:migrate
+Run rails s
+Open your browser to the location prompted in your terminal.
 
-* Ruby version
+Contributing
+Please contact Michael Werling at mfw6mw@virginia.edu if you have any suggestions or contributions to make this application run better or have more functionality.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+License
+This application is available as open source under the terms of the MIT License.
