@@ -14,20 +14,22 @@
 
     </ul>    
 
-    <h2><%= link_to "Click Here to add a new Merit badge Record", new_scout_badge_path(@scout) %></h2><br>
-    <h2><%= link_to "Click Here to view a list of recent Troop Merit Badges", scout_badges_path %></h2><br>
+    <h2><%= link_to "Add a new Merit badge Record", new_scout_badge_path(@scout) %></h2>
+    <h2><%= link_to "View a list of recent Troop Merit Badges", scout_badges_path %></h2><br>
     
 <% else %>
     
     <h2> See the Troop's Most Recent Merit Badge Earnings: </h2>
 
     <h2><%= link_to "Add a new Merit Badge to the advancement report", new_scout_badge_path %></h2>
+    <h3><%= link_to "Learn about all Merit Badges offered.", badges_path %></h2>
 
         <% @scout_badges.each do |badge| %>
-            <li><b><%= link_to badge.badge.name, badge_path(badge.badge.id)%><b></li>
+            <li><b><%= badge.badge.name%><b></li>
             Earned By : <%= link_to badge.scout.username, scout_path(badge.scout) %><br>
             Date Earned : <%=badge.date.strftime("%A, %b %e, %Y")%> 
         <% end %>
 
     <h2><%= link_to "Add a new Merit Badge to the advancement report", new_scout_badge_path %></h2>
+    <h3><%= link_to "Learn about all Merit Badges offered.", badges_path %></h2>
 <% end %>

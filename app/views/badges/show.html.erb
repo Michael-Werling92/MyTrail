@@ -2,7 +2,8 @@
 
 <h2> Description: <%= @badge.description %></h2>
 
-<h2>Is this Eagle Required? <%= @badge.eagle_Required.YesNo(item.IsTrue) %></h2>
+<h2>Is this Eagle Required? <%= @badge.eagle_Required %></h2>
 
-<br><h2><%= link_to "See all available badges here", badges_path %></h2><br>
-<br><h2><%= link_to "Add a new Merit Badge to the advancement report", new_scout_badge_path %></h2><br>
+<br><h2><%= link_to "See all available badges here", badges_path %></h2>
+<h2><%= link_to "Add a new Merit Badge to the advancement report", new_scout_badge_path %></h2>
+<h2><%= link_to "View the Troop's Merit Badges Record", scout_badges_path %></h2><br>
