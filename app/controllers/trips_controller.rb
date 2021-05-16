@@ -5,9 +5,9 @@ class TripsController < ApplicationController
     def index
         if params[:scout_id]
            find_scout
-           @trips = @scout.trips.order(:date)
+           @trips = @scout.trips.order(date: :desc)
         else
-           @trips = Trip.all.order(:date)
+           @trips = Trip.all.order(date: :desc)
            @current_scout= Scout.find_by_id(session[:scout_id])
         end
     end
@@ -27,7 +27,6 @@ class TripsController < ApplicationController
         if params[:scout_id]
             find_scout
             @trip = @scout.trips.build(trip_with_scout_params)
-            binding.pry
         else
             @trip = Trip.new(trip_params)
         end
