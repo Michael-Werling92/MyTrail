@@ -18,7 +18,7 @@ ScoutBadge.destroy_all
 
     Scout.create(first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    rank: Faker::Mountain.name,
+    rank: ["Scout", "Tenderfoot", "Second Class", "First Class", "Star", "Life", "Eagle"].sample,
     username: Faker::Artist.name,
     password: "12345",
     )
@@ -44,7 +44,7 @@ list_of_badges = [
     list_of_badges.each do |badge|
 
         Badge.create(name: badge,
-        description: Faker::Quote.famous_last_words,
+        description: "A Scout learns valuable skills to become a productive person.",
         eagle_Required: true)
     end
 
