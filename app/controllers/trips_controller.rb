@@ -7,7 +7,7 @@ class TripsController < ApplicationController
            find_scout
            @trips = @scout.trips.order(date: :desc)
         else
-           @trips = Trip.all.order(date: :desc)
+           @trips = Trip.chrono
            @current_scout= Scout.find_by_id(session[:scout_id])
         end
     end
