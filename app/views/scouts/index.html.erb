@@ -1,6 +1,13 @@
 <h1>Find all of the scouts in the troop below:</h1>
 <h2>Click each scout's username for more information.</h2>
 
+<div class="search">
+    <%= form_tag(scouts_path, method: :get) do %>
+        Search By Name, Username, or Rank <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag 'Search', name: nil %>
+    <%end%>
+</div> 
+
 <ul>
 
     <% @scouts.each do |scout| %>

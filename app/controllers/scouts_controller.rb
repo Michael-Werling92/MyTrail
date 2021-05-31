@@ -3,7 +3,16 @@ class ScoutsController < ApplicationController
     before_action :find_scout, only: [:edit, :update, :destroy]
     
     def index
-        @scouts = Scout.all
+        if params[:search]
+          search_term = params[:search].downcase.gsub(/\s+/, "")
+          @scouts = Scout.all.select{ |scout| 
+            scout.first_name.downcase.include?(search_term) || 
+            scout.last_name.downcase.include?(search_term) || 
+            scout.username.downcase.include?(search_term)
+            scout.rank.downcase.include?(search_term)}
+        else
+          @scouts = Scout.all
+        end 
     end
     def show
         if logged_in?
